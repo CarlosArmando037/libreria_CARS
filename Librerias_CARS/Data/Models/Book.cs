@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Librerias_CARS.Data.Models
 {
@@ -15,9 +16,11 @@ namespace Librerias_CARS.Data.Models
         public string CoverUrl { get; set; }
         public DateTime? DateAdded { get; set; }
 
-        //Propiedades de navegación
+        //Propiedades de navegación(en esta parte es donde "mapeamos")
 
         public int PublisherId { get; set; }
         public Publisher Publisher { get; set;}
+        public List<Book_Author> Book_Authors { get; set; }
+
     }
 }
