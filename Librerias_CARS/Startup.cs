@@ -41,6 +41,8 @@ namespace Librerias_CARS
 
             //configurar el servicio para que pueda ser usado
             services.AddTransient<BooksService>();
+            services.AddTransient<AuthorsService>();
+            services.AddTransient<PublishersService>();
 
             services.AddSwaggerGen(c =>
             {

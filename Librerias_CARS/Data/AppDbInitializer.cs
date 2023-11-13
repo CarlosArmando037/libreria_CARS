@@ -27,7 +27,6 @@ namespace Librerias_CARS.Data
                         DateRead = DateTime.Now.AddDays(-10),
                         Rate = 4,
                         Genero = "Biography",
-                        Autor = "1st Autor",
                         CoverUrl = "https...",
                         DateAdded = DateTime.Now,
                     },
@@ -37,11 +36,10 @@ namespace Librerias_CARS.Data
                         Descripcion = "2nd Book Description",
                         IsRead = true,
                         Genero = "Biography",
-                        Autor = "2nd Autor",
                         CoverUrl = "https...",
                         DateAdded = DateTime.Now,
                     });
-                    context.SaveChanges();
+                    //context.SaveChanges();
 
                 }
             }

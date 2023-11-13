@@ -35,10 +35,10 @@ namespace Librerias_CARS.Controllers
         }
 
         //añadir libro
-        [HttpPost("add-book")]
+        [HttpPost("add-book-With-Authors")]
         public IActionResult AddBook([FromBody] BookVM book)
         {
-            _booksService.AddBook(book);
+            _booksService.AddBookWithAuthors(book);
             return Ok();
         }
 

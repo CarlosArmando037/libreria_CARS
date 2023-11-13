@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8WMEogN6SqIkguAp48Jp9LL4QwgEat55/UaydI0R4KfD9KfzNPad5yxHCkbn3n1Ol58cQkjNOmELBtuhNKUgow==",
+  "dgSpecHash": "cyLIVzRply14c1s+8TAm1rCyU+pFwebqqK52ftJh1ead8jVCFfrPviO45SKjVb0wdT48ZOqJX+mvfeuZ9hdVCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cd08\\Desktop\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj",
+  "projectFilePath": "C:\\Users\\cd08\\Desktop\\CARLOS ARMANDO RAMIREZ SALAS\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cd08\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cd08\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cd08\\Desktop\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj": {}
+    "C:\\Users\\cd08\\Desktop\\CARLOS ARMANDO RAMIREZ SALAS\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cd08\\Desktop\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj": {
+    "C:\\Users\\cd08\\Desktop\\CARLOS ARMANDO RAMIREZ SALAS\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cd08\\Desktop\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj",
+        "projectUniqueName": "C:\\Users\\cd08\\Desktop\\CARLOS ARMANDO RAMIREZ SALAS\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj",
         "projectName": "Librerias_CARS",
-        "projectPath": "C:\\Users\\cd08\\Desktop\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj",
+        "projectPath": "C:\\Users\\cd08\\Desktop\\CARLOS ARMANDO RAMIREZ SALAS\\Librerias_CARS\\Librerias_CARS\\Librerias_CARS.csproj",
         "packagesPath": "C:\\Users\\cd08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cd08\\Desktop\\Librerias_CARS\\Librerias_CARS\\obj\\",
+        "outputPath": "C:\\Users\\cd08\\Desktop\\CARLOS ARMANDO RAMIREZ SALAS\\Librerias_CARS\\Librerias_CARS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

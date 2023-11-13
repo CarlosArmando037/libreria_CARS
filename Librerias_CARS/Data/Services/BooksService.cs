@@ -1,5 +1,6 @@
 ﻿using Librerias_CARS.Data.Models;
 using Librerias_CARS.Data.ViewModels;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Librerias_CARS.Data.Services
             _context = context;
         }
         //metodo para añadri libro
-        public void AddBook(BookVM book)
+        public void AddBookWithAuthors(BookVM book)
         {
             var _book = new Book()
             {
@@ -26,12 +27,24 @@ namespace Librerias_CARS.Data.Services
                 DateRead = book.DateRead,
                 Rate = book.Rate,
                 Genero = book.Genero,
-                Autor = book.Autor,
                 CoverUrl = book.CoverUrl,
                 DateAdded = DateTime.Now,
+                PublisherId = book.PublisherID
             };
             _context.Books.Add(_book);
             _context.SaveChanges();
+
+            foreach (var id in book.AutorIDs)
+            {
+                var _book_author = new Book_Author()
+                {
+                    BookId = _book.id,
+                    AuthorId = id
+
+                };
+                _context.Book_Authors.Add(_book_author);
+                _context.SaveChanges();
+            }
         }
 
 
@@ -53,7 +66,6 @@ namespace Librerias_CARS.Data.Services
                 _book.DateRead = book.DateRead;
                 _book.Rate = book.Rate;
                 _book.Genero = book.Genero;
-                _book.Autor = book.Autor;
                 _book.CoverUrl = book.CoverUrl;
 
                 _context.SaveChanges();
