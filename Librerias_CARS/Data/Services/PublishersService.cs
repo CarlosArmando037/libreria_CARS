@@ -1,6 +1,7 @@
 ﻿using Librerias_CARS.Data.Models;
 using Librerias_CARS.Data.ViewModels;
 using System;
+using System.Linq;
 
 namespace Librerias_CARS.Data.Services
 {
@@ -24,5 +25,19 @@ namespace Librerias_CARS.Data.Services
             _context.SaveChanges();
         }
 
+        public PublisherWithBooksandAuthorsVM GetPublisherData(int publisherId)
+        {
+            var _publisherData = _context.Publishers.Where(n => n.Id == publisherId)
+                .Select(n => new PublisherWithBooksandAuthorsVM()
+                {
+                    Name =n.Name,
+                    BookAuthors = n.Books.Select(n => new BookAuthorVM()
+                    {
+                        BookName = n.Titulo,
+                        BookAuthors = n.Book_Authors.Select(n => n.Author.FullName).ToList()
+                    }).ToList()
+                }).FirstOrDefault();
+            return _publisherData;
+        }
     }
 }

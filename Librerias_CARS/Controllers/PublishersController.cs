@@ -22,5 +22,12 @@ namespace Librerias_CARS.Controllers
             _publishersServices.AddPublishers(publisher);
             return Ok();
         }
+        [HttpGet("get-publisher-books-with-authors/{id}")]
+        public IActionResult GetPublisher(int id)
+        {
+            var _response = _publishersServices.GetPublisherData(id);
+            return Ok(_response);
+        }
+
     }
 }

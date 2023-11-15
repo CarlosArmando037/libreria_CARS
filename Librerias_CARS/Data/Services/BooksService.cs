@@ -51,7 +51,23 @@ namespace Librerias_CARS.Data.Services
         //listar libros
         public List<Book> GetAllBks() => _context.Books.ToList();
         //listar libro por Id
-        public Book GetBookById(int bookid) => _context.Books.FirstOrDefault(n => n.id == bookid);
+        public BookWithAuthorsVM GetBookById(int bookid)
+        {
+            var _bookWithAuthors = _context.Books.Where(n => n.id == bookid).Select(book => new BookWithAuthorsVM()
+            {
+                Titulo = book.Titulo,
+                Descripcion = book.Descripcion,
+                IsRead = book.IsRead,
+                DateRead = book.DateRead,
+                Rate = book.Rate,
+                Genero = book.Genero,
+                CoverUrl = book.CoverUrl,
+                PublisherName = book.Publisher.Name,
+                AutorNames = book.Book_Authors.Select(n => n.Author.FullName).ToList()
+            }).FirstOrDefault();
+
+            return _bookWithAuthors;
+        }
 
         //metodo para editar un libro
         public Book UpdateBookById(int bookid, BookVM book)
@@ -82,5 +98,7 @@ namespace Librerias_CARS.Data.Services
                 _context.SaveChanges();
             }
         }
+
+        
     }
 }
