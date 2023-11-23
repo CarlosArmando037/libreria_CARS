@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Librerias_CARS.Data.Services;
 using Librerias_CARS.Data.ViewModels;
+using System;
+using Librerias_CARS.Exceptions;
 
 namespace Librerias_CARS.Controllers
 {
@@ -19,8 +21,20 @@ namespace Librerias_CARS.Controllers
         [HttpPost("add-publisher")]
         public IActionResult AddPublisher([FromBody] PublisherVM publisher)
         {
-             var newPublisher = _publishersServices.AddPublishers(publisher);
-            return Created(nameof(AddPublisher), newPublisher);
+            try
+            {
+                var newPublisher = _publishersServices.AddPublishers(publisher);
+                return Created(nameof(AddPublisher), newPublisher);
+
+            }
+            catch(PublisherNameException ex)
+            {
+                return BadRequest($"{ex.Message}, nombre de le editoria: {ex.PublisherName}");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("get-publisher-by-id/{id}")]
@@ -35,7 +49,7 @@ namespace Librerias_CARS.Controllers
             {
                 return NotFound();
             }
-            return Ok(_response);
+
         }
 
         [HttpGet("get-publisher-books-with-authors/{id}")]
@@ -48,8 +62,16 @@ namespace Librerias_CARS.Controllers
         [HttpDelete("delete-publisher-by-id")]
         public IActionResult DeletePublisherById(int id)
         {
-            _publishersServices.DeletePublisherById(id);
-            return Ok();
+            try
+            {
+                _publishersServices.DeletePublisherById(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
     }
 }
